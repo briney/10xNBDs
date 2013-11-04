@@ -29,7 +29,7 @@ def parse_uaids(f, out_handle):
 		index = get_uaid(str(seq.seq))
 		seq_id = '{0}_{1}'.format(seq.id, index)
 		trunc_seq = str(seq.seq)[args.uaid_length:]
-		out_handle.write('>{0}\n{1}'.format(seq_id, trunc_seq))
+		out_handle.write('>{0}\n{1}\n'.format(seq_id, trunc_seq))
 
 def main():
 	files = list_files(args.input)
