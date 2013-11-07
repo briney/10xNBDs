@@ -27,7 +27,7 @@ def get_output_handle(f):
 def parse_uaids(f, out_handle):
 	for seq in SeqIO.parse(open(f, 'r'), 'fasta'):
 		index = get_uaid(str(seq.seq))
-		seq_id = '{0}_{1}'.format(seq.id, index)
+		seq_id = '{0}_{1}_'.format(seq.id, index)
 		trunc_seq = str(seq.seq)[args.uaid_length:]
 		out_handle.write('>{0}\n{1}\n'.format(seq_id, trunc_seq))
 
